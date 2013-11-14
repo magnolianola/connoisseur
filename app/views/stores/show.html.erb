@@ -1,0 +1,35 @@
+<p><b>LCBO (<%= @store['name'] %>)</b></p>
+<p><%= @store['address_line_1'] %></p>
+<p><%= @store['address_line_2'] %></p>
+<p><%= @store['city'] %>, Ontario</p> 
+<p><%= @store['province'] %></p>
+<p><%= @store['postal_code'] %></p>
+<p>Phone: <%= @store['telephone'] %></p><br>
+
+</br><p>Wheelchair Access: <% if @store['has_wheelchair_accessability'] %>
+						<%= 'Yes' %>
+						<% else %>
+						<%= 'No' %>
+						<% end %>
+						</p>
+<p>Parking: <% if @store['has_parking']  %>
+				<%= 'Yes' %>
+				<% else %>
+				<%= 'No' %>
+				<% end %>
+				</p>
+<p>French services: <% if @store['has_bilingual_services']  %>
+				<%= 'Yes' %>
+				<% else %>
+				<%= 'No' %>
+				<% end %>
+				</p><br>
+</br><p>Hours:</p>
+<p>Sunday: <%= convert_store_hours(@store['sunday_open']) %> - <%= convert_store_hours(@store['sunday_close']) %></p>
+<p>Monday: <%= convert_store_hours (@store['monday_open']) %> - <%= convert_store_hours(@store['monday_close']) %></p>
+<p>Tuesday: <%= convert_store_hours(@store['tuesday_open']) %> - <%= convert_store_hours(@store['tuesday_close']) %></p>
+<p>Wednesday: <%= convert_store_hours(@store['wednesday_open']) %> - <%= convert_store_hours(@store['wednesday_close']) %></p>
+<p>Thursday: <%= convert_store_hours(@store['thursday_open']) %> - <%= convert_store_hours(@store['thursday_close']) %></p>
+<p>Friday: <%= convert_store_hours(@store['friday_open']) %> - <%= convert_store_hours(@store['friday_close']) %></p>
+<p>Saturday <%= convert_store_hours(@store['saturday_open']) %> - <%= convert_store_hours(@store['saturday_close']) %></p>
+
